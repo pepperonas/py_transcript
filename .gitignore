@@ -1,9 +1,6 @@
 # Virtual environment
 venv/
 
-# Sound files (too large for git)
-sounds/
-
 # Python
 __pycache__/
 *.py[cod]
