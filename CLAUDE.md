@@ -25,6 +25,14 @@ python batch_transcribe.py
 - Uses Whisper "small" model (English language)
 - Creates `.txt` files alongside each MP3 with the transcription
 
+## Tests
+
+`python -m pytest -q` (venv `.venv-test`, deps in `requirements-dev.txt`, CI in
+`.github/workflows/tests.yml`). Tests never load Whisper — `whisper`/`tqdm` are
+imported lazily inside `main()`; keep it that way or the suite needs torch.
+The default sounds dir is `sounds/` next to the script (it used to be a
+hard-coded `/Users/martin/Desktop/yt/...` path that no longer existed).
+
 ## Dependencies
 
 - openai-whisper
